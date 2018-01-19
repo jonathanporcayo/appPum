@@ -11,8 +11,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  notification:any=[];
-
+  rootPage:any = HomePage;
+  
   constructor(private localNotifications: LocalNotifications,private socket: Socket,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -21,7 +21,7 @@ export class MyApp {
       splashScreen.hide();
     });
     this.socket.on('notification', (data) => {
-      this.notification= data.data;
+      console.log(data.data );
       this.localNotifications.schedule([ { 
         title: data.data.title,
         text: data.data.body,
