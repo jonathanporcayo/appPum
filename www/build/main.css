@@ -25677,3 +25677,241 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+.time {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  height: 95px;
+  width: 65px;
+  -webkit-perspective: 479px;
+  perspective: 479px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.count {
+  background: #202020;
+  color: #f8f8f8;
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.3em;
+  line-height: 2.4em;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  top: 0;
+  width: 100%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform-style: flat;
+  transform-style: flat;
+}
+
+.count.top {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px 5px 0 0;
+  height: 50%;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.count.bottom {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), to(transparent));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1), transparent);
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-radius: 0 0 5px 5px;
+  line-height: 0;
+  height: 50%;
+  top: 50%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+
+.count.curr.top {
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  z-index: 3;
+}
+
+.count.next.bottom {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  z-index: 2;
+}
+
+.label {
+  font-size: normal;
+  margin-top: 5px;
+  display: block;
+  position: absolute;
+  top: 95px;
+  width: 100%;
+}
+
+.hand {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0 !important;
+}
+
+.flip .count.curr.top {
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+
+.flip .count.next.bottom {
+  -webkit-transition: all 250ms ease-in-out 250ms;
+  transition: all 250ms ease-in-out 250ms;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+/* Top Secret Logo */
+.top-secret-logo {
+  background: url("../assets/images/top_secret.png") no-repeat;
+  width: 350px;
+  height: 175px;
+  margin: 20px;
+}
+
+.top-secret-button {
+  border: 2px dashed darkred;
+  color: darkred !important;
+}
+
+body {
+  background: url("assets/images/oldpaper.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+page-home {
+  /* Top Secret Logo */
+}
+
+page-home .time {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  height: 95px;
+  width: 65px;
+  -webkit-perspective: 479px;
+  perspective: 479px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+page-home .count {
+  background: #202020;
+  color: #f8f8f8;
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.3em;
+  line-height: 2.4em;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  top: 0;
+  width: 100%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform-style: flat;
+  transform-style: flat;
+}
+
+page-home .count.top {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px 5px 0 0;
+  height: 50%;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+page-home .count.bottom {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), to(transparent));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1), transparent);
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-radius: 0 0 5px 5px;
+  line-height: 0;
+  height: 50%;
+  top: 50%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+
+page-home .count.curr.top {
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  z-index: 3;
+}
+
+page-home .count.next.bottom {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  z-index: 2;
+}
+
+page-home .label {
+  font-size: normal;
+  margin-top: 5px;
+  display: block;
+  position: absolute;
+  top: 95px;
+  width: 100%;
+}
+
+page-home .hand {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0 !important;
+}
+
+page-home .flip .count.curr.top {
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+
+page-home .flip .count.next.bottom {
+  -webkit-transition: all 250ms ease-in-out 250ms;
+  transition: all 250ms ease-in-out 250ms;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+page-home .top-secret-logo {
+  background: url("../assets/images/top_secret.png") no-repeat;
+  width: 350px;
+  height: 175px;
+  margin: 20px;
+}
+
+page-home .top-secret-button {
+  border: 2px dashed darkred;
+  color: darkred !important;
+}

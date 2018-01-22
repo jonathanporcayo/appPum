@@ -8,7 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-const config: SocketIoConfig = { url: 'http://192.168.1.68:3001', options: {} };
+const config: SocketIoConfig = { url: 'https://socket.pumpops.com:8443', options: {} };
 
 import { LocalNotifications } from '@ionic-native/local-notifications';
 

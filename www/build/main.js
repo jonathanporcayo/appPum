@@ -58,7 +58,7 @@ var HomePage = (function () {
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-home',template:/*ion-inline-start:"/Applications/MAMP/htdocs/smi/appPumpops/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  The world is your oyster.\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/smi/appPumpops/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Applications/MAMP/htdocs/smi/appPumpops/src/pages/home/home.html"*/' \n\n<ion-content padding style=\'background-image: url(../../assets/fondo.png) ; background-size: cover\' > \n\n\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/smi/appPumpops/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], HomePage);
@@ -112,7 +112,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var config = { url: 'http://localhost:3001', options: {} };
+var config = { url: 'https://socket.pumpops.com:8443', options: {} };
 
 var AppModule = (function () {
     function AppModule() {
@@ -192,17 +192,17 @@ var MyApp = (function () {
             splashScreen.hide();
         });
         this.socket.on('notification', function (data) {
-            console.log(data);
+            console.log(data.data);
             _this.localNotifications.schedule([{
-                    id: 2,
-                    title: 'Local ILocalNotification Example',
-                    text: 'Multi ILocalNotification 2',
-                    icon: 'http://example.com/icon.png'
+                    at: new Date(new Date().getTime() + 3600),
+                    title: data.data.title,
+                    text: data.data.body,
+                    icon: 'https://www.cryptopia.co.nz/Content/Images/Coins/' + data.data.symbol + '-large.png'
                 }]);
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Applications/MAMP/htdocs/smi/appPumpops/src/app/app.html"*/' \nsolo notificaciones locales'/*ion-inline-end:"/Applications/MAMP/htdocs/smi/appPumpops/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Applications/MAMP/htdocs/smi/appPumpops/src/app/app.html"*/'\n<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/smi/appPumpops/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6__ionic_native_local_notifications__["a" /* LocalNotifications */], __WEBPACK_IMPORTED_MODULE_5_ng_socket_io__["Socket"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
